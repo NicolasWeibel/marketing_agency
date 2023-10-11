@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import logo_boomslag from "assets/images/boomslag-black.png";
 
 function Footer() {
   const navigation = {
@@ -8,18 +9,13 @@ function Footer() {
       { name: "Commerce", href: "#" },
       { name: "Insights", href: "#" },
     ],
-    support: [
-      { name: "Pricing", href: "#" },
-      { name: "Documentation", href: "#" },
-      { name: "Guides", href: "#" },
-      { name: "API Status", href: "#" },
-    ],
+    support: [{ name: "Contact", href: "/contact" }],
     company: [
-      { name: "About", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Jobs", href: "#" },
-      { name: "Press", href: "#" },
-      { name: "Partners", href: "#" },
+      { name: "Cases", href: "/cases" },
+      { name: "Services", href: "/services" },
+      { name: "About Us", href: "/about-us" },
+      { name: "Careers", href: "/careers" },
+      { name: "Blog", href: "/blog" },
     ],
     legal: [
       { name: "Claim", href: "#" },
@@ -92,18 +88,14 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer className="bg-gray-50" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       <div className="mx-auto max-w-full py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <img
-              className="h-10"
-              src="https://tailwindui.com/img/logos/mark.svg?color=gray&shade=300"
-              alt="Company name"
-            />
+            <img src={logo_boomslag} width={140} alt="Logo" />
             <p className="text-base text-gray-500">
               Making the world a better place through constructing elegant
               hierarchies.
@@ -125,7 +117,7 @@ function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-base font-medium text-gray-900">
-                  Solutions
+                  Visit Us
                 </h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
@@ -141,7 +133,7 @@ function Footer() {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Support</h3>
+                <h3 className="text-base font-medium text-gray-900">Contact</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -158,7 +150,9 @@ function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-base font-medium text-gray-900">Company</h3>
+                <h3 className="text-base font-medium text-gray-900">
+                  Services
+                </h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -173,7 +167,7 @@ function Footer() {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Legal</h3>
+                <h3 className="text-base font-medium text-gray-900">Company</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
