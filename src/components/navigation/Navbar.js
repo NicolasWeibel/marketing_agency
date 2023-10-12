@@ -1,8 +1,12 @@
 import { connect } from "react-redux";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo_boomslag from "assets/images/boomslag-black.png";
+import DotLoader from "react-spinners/DotLoader";
 
 function Navbar() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <nav className="w-full py-6 top-0 transition duration-300 ease-in-out z-40 fixed">
       <div className="bg-white px-4 sm:px-6">
@@ -47,12 +51,19 @@ function Navbar() {
             >
               Contact
             </NavLink>
-            <button
-              type="button"
+
+            <Link
+              to="/contacto"
               className="inline-flex ml-12 items-center rounded-md border border-transparent bg-orange-button px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
-              Hire us
-            </button>
+              Hire Us
+              <DotLoader
+                className="ml-3 -mr-1 h-5 w-5"
+                loading={loading}
+                size={20}
+                color="#f2f2f2"
+              />
+            </Link>
           </div>
         </div>
       </div>
