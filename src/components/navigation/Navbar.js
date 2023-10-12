@@ -7,47 +7,69 @@ import DotLoader from "react-spinners/DotLoader";
 function Navbar() {
   const [loading, setLoading] = useState(true);
 
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.getElementById("navbar")) {
+      if (
+        document.body.scrollTop > 30 ||
+        document.documentElement.scrollTop > 30
+      ) {
+        document.getElementById("navbar").classList.add("shadow-navbar");
+        document.getElementById("navbar").classList.add("bg-white");
+      } else {
+        document.getElementById("navbar").classList.remove("shadow-navbar");
+        document.getElementById("navbar").classList.remove("bg-white");
+      }
+    }
+  }
+
   return (
-    <nav className="w-full py-6 top-0 transition duration-300 ease-in-out z-40 fixed">
-      <div className="bg-white px-4 sm:px-6">
-        <div className="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap md:px-14 px-2">
+    <nav
+      id="navbar"
+      className="w-full py-2 top-0 transition duration-200 ease-in-out z-40 fixed"
+    >
+      <div className="px-4 sm:px-6">
+        <div className="-ml-4 -mt-2 hidden lg:flex flex-wrap items-center justify-between sm:flex-nowrap md:px-14 px-2">
           <Link to="/" className="ml-4 mt-2">
             <img src={logo_boomslag} width={140} alt="Logo" />
           </Link>
           <div className="ml-4 mt-2 flex-shrink-0">
             <NavLink
               to="/cases"
-              className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+              className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:border-b-2 hover:border-orange-500 transition duration-300 ease-in-out mx-4"
             >
               Cases
             </NavLink>
             <NavLink
               to="/services"
-              className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+              className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:border-b-2 hover:border-orange-500 transition duration-300 ease-in-out mx-4"
             >
               Services
             </NavLink>
             <NavLink
               to="/about-us"
-              className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+              className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:border-b-2 hover:border-orange-500 transition duration-300 ease-in-out mx-4"
             >
               About Us
             </NavLink>
             <NavLink
               to="/careers"
-              className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+              className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:border-b-2 hover:border-orange-500 transition duration-300 ease-in-out mx-4"
             >
               Careers
             </NavLink>
             <NavLink
               to="/blog"
-              className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+              className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:border-b-2 hover:border-orange-500 transition duration-300 ease-in-out mx-4"
             >
               Blog
             </NavLink>
             <NavLink
               to="/contact"
-              className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+              className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:border-b-2 hover:border-orange-500 transition duration-300 ease-in-out mx-4"
             >
               Contact
             </NavLink>
